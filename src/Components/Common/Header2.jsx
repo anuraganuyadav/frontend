@@ -1,45 +1,71 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { NavLink, Link } from 'react-router-dom'
 
 const Header2 = () => {
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    // Toggle dropdown visibility
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+    };
+
+
     return (
         <>
             {/* Navbar & Hero Start */}
-
-            <div class="container-fluid position-relative p-0">
-                <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                    <a href="" class="navbar-brand p-0">
-                        <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Travela</h1>
+            <div className="container-fluid position-relative p-0">
+                <nav className="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                    <a href="/" className="navbar-brand p-0">
+                        <h1 className="m-0"><i className="fa fa-map-marker-alt me-3"></i>International</h1>
                         {/* <img src="img/logo.png" alt="Logo"> */}
                     </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                        <span class="fa fa-bars"></span>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span className="fa fa-bars"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <div class="navbar-nav ms-auto py-0">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
-                            <a href="index.html" class="nav-item nav-link">About</a>
-                            <a href="services.html" class="nav-item nav-link">Services</a>
-                            <a href="packages.html" class="nav-item nav-link">Packages</a>
-                            <a href="blog.html" class="nav-item nav-link">Blog</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                                <div class="dropdown-menu m-0">
-                                    <a href="destination.html" class="dropdown-item">Destination</a>
-                                    <a href="tour.html" class="dropdown-item">Explore Tour</a>
-                                    <a href="booking.html" class="dropdown-item">Travel Booking</a>
-                                    <a href="gallery.html" class="dropdown-item">Our Gallery</a>
-                                    <a href="guides.html" class="dropdown-item">Travel Guides</a>
-                                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                    <a href="404.html" class="dropdown-item">404 Page</a>
+                    <div className="collapse navbar-collapse" id="navbarCollapse">
+                        <div className="navbar-nav ms-auto py-0">
+                            <NavLink to="/" className="nav-item nav-link" >Home</NavLink>
+                            <div className="nav-item dropdown">
+                                <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Domestic Packages</a>
+                                <div className="dropdown-menu m-0">
+                                    <NavLink to="/domestic/category/honeymoon" className="dropdown-item">Honeymoon Packages</NavLink>
+                                    <NavLink to="/domestic/category/family" className="dropdown-item">Family Packages</NavLink>
+                                    <NavLink to="/domestic/category/group" className="dropdown-item">Group Packages</NavLink>
+                                    <NavLink to="/domestic/category/weekend" className="dropdown-item">Weekend Packages</NavLink>
+                                    <NavLink to="/domestic/category/solo" className="dropdown-item">Solo Packages</NavLink>
                                 </div>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+
+
+                            <div className="nav-item dropdown">
+                                {/* Link for "International Packages", toggle the dropdown */}
+                                <Link
+                                    to="/international-packages"
+                                    className="nav-link"
+                                    onClick={toggleDropdown}  // Handle click to toggle dropdown visibility
+                                >
+                                    International Packages
+                                </Link>
+
+                                {/* Dropdown Menu */}
+                                <div className={`dropdown-menu m-0 ${isOpen ? 'show' : ''}`}>
+                                    <NavLink to="/international/category" className="dropdown-item">Honeymoon Packages</NavLink>
+                                    <NavLink to="/family-packages" className="dropdown-item">Family Packages</NavLink>
+                                    <NavLink to="/group-packages" className="dropdown-item">Group Packages</NavLink>
+                                    <NavLink to="/weekend-packages" className="dropdown-item">Weekend Packages</NavLink>
+                                    <NavLink to="/solo-packages" className="dropdown-item">Solo Packages</NavLink>
+                                </div>
+                            </div>
+
+                            <NavLink to="/travel-contact" className="nav-item nav-link">Contact</NavLink>
+                            <NavLink to="/about-us" className="nav-item nav-link" >About</NavLink>
+
                         </div>
-                        <a href="" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
+                        <a href="" className="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
                     </div>
                 </nav>
-                </div>
-          
+            </div>
             {/* Navbar & Hero End */}
         </>
     )

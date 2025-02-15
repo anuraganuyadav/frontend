@@ -1,0 +1,40 @@
+/* header2.module.css */
+
+/* Container for dropdown items, using flexbox layout */
+.dropdownMenuRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Increase spacing between columns */
+    margin-top: 10px;
+    /* Adds spacing between the top and items */
+}
+
+/* Adjust the width of each column to be wider */
+.dropdownCol {
+    width: calc(25% - 20px);
+    /* Adjust to 4 columns per row with space between */
+    padding: 0 10px;
+    /* Adds space between columns */
+    box-sizing: border-box;
+}
+
+/* Styling for dropdown items */
+.dropdownItem {
+    padding: 15px 20px;
+    /* Increase padding to give more space around the text */
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 15px;
+    /* Adds spacing between each item */
+    border-radius: 5px;
+    /* Optional: Add rounded corners */
+    transition: background-color 0.3s ease;
+}
+
+/* Optional hover effect for better user experience */
+.dropdownItem:hover {
+    background-color: #f1f1f1;
+    /* Change background on hover */
+}

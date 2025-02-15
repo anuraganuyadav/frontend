@@ -1,0 +1,51 @@
+/* internationalcountrymodule.module.css */
+
+
+
+.amazingcountry {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.slide {
+    padding: 10px;
+}
+
+.countryImage {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.countryName {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: black;
+}
+
+/* Customize the arrow styles further if necessary */
+.slick-prev,
+.slick-next {
+    font-size: 30px;
+    /* Adjust arrow size */
+    color: #db0a0a;
+    /* Arrow color */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    cursor: pointer;
+}
+
+.slick-prev {
+    left: -40px;
+    /* Position left arrow */
+}
+
+.slick-next {
+    right: -40px;
+    /* Position right arrow */
+}
