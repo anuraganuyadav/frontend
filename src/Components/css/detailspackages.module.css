@@ -1,0 +1,126 @@
+.packagename {
+    color: rgb(33, 33, 33);
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px;
+    margin-top: 16px;
+}
+
+.pickupdropcontainer {
+    display: inline-flex;
+    flex-direction: row;
+    padding: 12px 14px;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+    background: rgb(242, 242, 242);
+    margin-right: 24px;
+    margin-top: 20px;
+}
+
+.pickupdropheading {
+    color: rgb(78, 78, 78);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+.pickupdropdetails {
+    color: rgb(61, 61, 61);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 27px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    /* Space between top content */
+}
+
+.pickupdropicon {
+    width: 30px;
+    /* Icon size */
+    margin-right: 10px;
+    /* Space between icon and text */
+}
+
+.pickupdropinfo {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .duration {
+    font-size: 16px;
+    font-weight: bold;
+} */
+
+.durationIcon {
+    width: 20px;
+    /* Set the size of the clock icon */
+    margin-right: 10px;
+    /* Space between icon and text */
+}
+
+.durationText {
+    margin: 0;
+    /* Remove margin from paragraph */
+}
+
+.dwnit {
+    margin-top: 20px;
+}
+
+.sharelink {
+    width: 18px;
+    height: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: 15px;
+
+}
+
+/*** itineary css in package details  ***/
+
+.itncontainer {
+    display: flex;
+    width: 100%;
+    height: 52px;
+    justify-content: space-around;
+    gap: 8px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background: rgb(224, 250, 255);
+    position: sticky;
+    top: 120px;
+    z-index: 2;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 5px 0px;
+}
+
+.sectiontitle {
+    color: rgb(61, 61, 61);
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    height: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+/* Active section style */
+.sectiontitle.active {
+    background-color: rgb(1, 175, 209);
+    padding: 2px 4px;
+    border-radius: 5px;
+    color: #fff;
+}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom'; // To capture dynamic URL parameter
+import { Link, useParams } from 'react-router-dom'; // To capture dynamic URL parameter
 import styles from "../css/intcategorywise.module.css";  // Ensure the path is correct
 import Header1 from '../Common/Header1';
 import Header2 from '../Common/Header2';
@@ -48,25 +48,25 @@ const DomCategoryWisePackages = () => {
 
     useEffect(() => {
         // Switch content based on category
-        if (category === 'honeymoon') {
+        if (category === 'honeymoon-packages') {
             setContent({
                 title: 'Honeymoon Tour Packages',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, eum aliquam corrupti placeat reprehenderit...',
                 bannerImage: honeymoonImage,
             });
-        } else if (category === 'family') {
+        } else if (category === 'family-packages') {
             setContent({
                 title: 'Family Tour Packages',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus laboriosam quam reiciendis...',
                 bannerImage: familyImage,
             });
-        } else if (category === 'group') {
+        } else if (category === 'group-packages') {
             setContent({
                 title: 'Group Tour Packages',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui labore distinctio nobis fugiat...',
                 bannerImage: groupImage,
             });
-        } else if (category === 'weekend') {
+        } else if (category === 'weekend-packages') {
             setContent({
                 title: 'Weekend Tour Packages',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui labore distinctio nobis fugiat...',
@@ -74,7 +74,7 @@ const DomCategoryWisePackages = () => {
             });
         }
 
-        else if (category === 'solo') {
+        else if (category === 'solo-packages') {
             setContent({
                 title: 'Solo Tour Packages',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui labore distinctio nobis fugiat...',
@@ -107,11 +107,13 @@ const DomCategoryWisePackages = () => {
                     {countries.map((country) => (
                         <div key={country.name} className="col-lg-3 col-md-4 col-sm-6 mb-4">
                             <div className={styles.countryCard}>
-                                <img
-                                    src={country.image}
-                                    alt={`${country.name} landscape`}
-                                    className={styles.countryImage}
-                                />
+                                <Link to="/domestic-packages">
+                                    <img
+                                        src={country.image}
+                                        alt={`${country.name} landscape`}
+                                        className={styles.countryImage}
+                                    />
+                                </Link>
                                 {/* <h3 className={styles.countryName}>{country.name}</h3> */}
                             </div>
                         </div>

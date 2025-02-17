@@ -4,13 +4,13 @@ import Layout from './Components/Layout';
 import About from './Components/About';
 import Services from './Components/Common/Services';
 import ContactUs from './Components/ContactUs';
-import InternationalPackages from './Components/International/InternationalPackages';
 import TravelBlogs from './Components/TravelBlogs';
 import TravelGallery from './Components/TravelGallery';
 import Error404 from './Components/Common/error404';
 import DomCategoryWisePackages from './Components/Domestic/DomCategoryWisePackages';
-import IntCategoryWise from './Components/International/IntCategoryWisePackages';
-
+import IntCategoryWisePackages from './Components/International/IntCategoryWisePackages';
+import Packages from './Components/Common/Packages';
+import DetailsPackages from './Components/Common/DetailsPackages';
 
 function App() {
   return (
@@ -21,10 +21,11 @@ function App() {
         <Route path="/service-us" element={<Services />} />
         <Route path="/travel-blog" element={<TravelBlogs />} />
         <Route path="/travel-contact" element={<ContactUs />} />
-        <Route path="/international-packages" element={<InternationalPackages />} />
-        <Route path="/international/category" element={<IntCategoryWise />} />
+        <Route path="/domestic-packages" element={<Packages type="domestic" />} />
+        <Route path="/international-packages" element={<Packages type="international" />} />
+        <Route path="/international/category/:category" element={<IntCategoryWisePackages />} />
         <Route path="/domestic/category/:category" element={<DomCategoryWisePackages />} />
-
+        <Route path="/details-packages" element={<DetailsPackages />} />
         <Route path="/travel-blogs" element={<TravelBlogs />} />
         <Route path="/travel-gallery" element={<TravelGallery />} />
         <Route path="/error-404" element={< Error404 />} />
@@ -32,5 +33,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
 export default App;

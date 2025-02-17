@@ -1,0 +1,113 @@
+.customised {
+    color: rgb(1, 175, 209);
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    margin-top: 8px;
+}
+
+.custrip {
+    color: rgb(61, 61, 61);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+.quotebox {
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0px;
+    border-radius: 56px;
+    background: rgb(1, 175, 209);
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 0px 6px 0px inset;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.08px;
+    width: 100%;
+}
+
+.quotecontainer {
+    display: flex;
+    justify-content: center;
+    /* Centers the quote box horizontally */
+    align-items: center;
+    /* Centers the quote box vertically */
+    padding: 20px;
+    /* Adds some space around the container */
+}
+
+.formcontainer {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 6px;
+    border: 1px solid rgb(1, 175, 209);
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 20.6px 0px;
+}
+.tagline {
+    font-size: 17.2px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26.88px;
+    /* align-self: flex-start; */
+    color: rgb(45, 45, 45);
+}
+
+.highlight {
+    color: rgb(1, 175, 209);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.formName {
+    width: 80%;
+    height: auto;
+    padding: 0px;
+    position: relative;
+    background-color: inherit;
+    border-radius: 8px;
+    margin-top: -2rem;
+}
+
+.inputWrapper {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    z-index: 1;
+    top: 40%;
+    left: 20px;
+    /* background: url(../img/name.svg) center center / contain no-repeat; */
+}
+
+.input {
+    outline: none;
+    display: block;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    height: 48px;
+    margin-top: 7px;
+    padding: 0px 30px 0px 60px;
+    /* Adjusted padding to accommodate the icon */
+    font-weight: 400;
+    /* font-size: 20px; */
+    line-height: 21px;
+    width: auto;
+    border: 1px solid rgb(209, 209, 209);
+}
