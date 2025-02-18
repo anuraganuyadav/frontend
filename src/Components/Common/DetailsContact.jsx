@@ -1,17 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from "../css/detailsContactus.module.css";
+import FreeQuoteModal from './FreeQuoteModal';
 const DetailsContact = () => {
+    const [isFreeQuote, setFreeQuoteIsModalOpen] = useState(false);  // Track modal state
+    const handlequoteClick = () => {
+        setFreeQuoteIsModalOpen(true);  // Show modal on share icon click
+    };
+
+    const handlequoteCloseModal = () => {
+        setFreeQuoteIsModalOpen(false); // Close modal
+    };
+
     return (
         <>
             <div className="col-lg-4">
+
                 <h3 className={styles.customised}>Customised</h3>
                 <p className={styles.custrip}>Customise your trip with us!</p>
-                <div className={styles.quotecontainer}><div className={styles.quotebox}>Get Quotes</div></div>
+                <div className={styles.quotecontainer}><div className={styles.quotebox} onClick={handlequoteClick}>Get Quotes</div></div>
                 {/* Form for quotes */}
                 <div className={`${styles.formcontainer} py-4`}>
 
                     <p className={styles.tagline}><span className={styles.highlight}>Contact Us?</span><br />Allow Us to Call You Back!</p>
-                    <form action="#" method="POST">
+                    <form>
                         <div className={`${styles.formName} py-4`}>
 
                             <div className={styles.inputWrapper}>
@@ -58,6 +69,7 @@ const DetailsContact = () => {
                     </form>
                 </div>
             </div>
+            {isFreeQuote && <FreeQuoteModal onClose={handlequoteCloseModal} />}
         </>
     )
 }

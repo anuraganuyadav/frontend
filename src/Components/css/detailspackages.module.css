@@ -1,6 +1,6 @@
 .packagename {
     color: rgb(33, 33, 33);
-    font-size: 36px;
+    font-size: 30px;
     font-style: normal;
     font-weight: 500;
     line-height: 40px;
@@ -97,7 +97,7 @@
     flex-shrink: 0;
     border-radius: 6px;
     background: rgb(224, 250, 255);
-    position: sticky;
+    /* position: sticky; */
     top: 120px;
     z-index: 2;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 5px 0px;
@@ -119,8 +119,141 @@
 
 /* Active section style */
 .sectiontitle.active {
-    background-color: rgb(1, 175, 209);
+    background-color: white;
     padding: 2px 4px;
     border-radius: 5px;
-    color: #fff;
+    color: rgb(1, 175, 209);
+}
+
+.detailsheading {
+
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.dthead {
+    margin-top: -39px;
+    padding: 4px 12px;
+}
+
+.indvdetails {
+    color: black;
+}
+
+.pkgdetails {
+    margin-top: 20px;
+}
+
+.itineraryday {
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(245, 245, 245);
+    color: rgb(61, 61, 61);
+    display: grid;
+    -webkit-box-align: center;
+    align-items: center;
+    grid-template-columns: 4.5fr 32fr 1fr;
+    gap: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.daynumber {
+    display: flex;
+    padding: 4px 8px;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.035px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border-radius: var(--radius-xsmall, 4px);
+    border: 0.5px solid rgb(117, 117, 117);
+    background: rgb(250, 254, 255);
+    color: rgb(78, 78, 78);
+}
+
+.daydetails {
+    color: rgb(61, 61, 61);
+    overflow: hidden;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+}
+
+.toggleicon {
+    width: 18px;
+    height: 18px;
+    color: white;
+}
+
+
+
+.inclusionscontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Adds space between the items */
+}
+
+.inclusionitem {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Adds space between the icon and text */
+}
+
+.inclusionitem img {
+    width: 20px;
+    /* Adjust the icon size if needed */
+    height: auto;
+}
+
+.inclusionitem p {
+    margin: 0;
+    font-size: 16px;
+    /* Adjust font size if needed */
+    color: #333;
+    /* Adjust the text color if needed */
+}
+
+
+.exclusionscontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Adds space between the items */
+}
+
+.exclusionsitem {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Adds space between the icon and text */
+}
+
+.exclusionsitem img {
+    width: 20px;
+    /* Adjust the icon size if needed */
+    height: auto;
+}
+
+.exclusionsitem p {
+    margin: 0;
+    font-size: 16px;
+    /* Adjust font size if needed */
+    color: #333;
+    /* Adjust the text color if needed */
+}
+
+.preprice{
+    text-decoration: line-through;
+    margin: 10px;
 }
