@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import FreeQuoteModal from './FreeQuoteModal';
 
 const Header2 = () => {
 
@@ -8,6 +9,15 @@ const Header2 = () => {
     // Toggle dropdown visibility
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
+    };
+
+    const [isFreeQuote, setFreeQuoteIsModalOpen] = useState(false);  // Track modal state
+    const handlequoteClick = () => {
+        setFreeQuoteIsModalOpen(true);  // Show modal on share icon click
+    };
+
+    const handlequoteCloseModal = () => {
+        setFreeQuoteIsModalOpen(false); // Close modal
     };
 
     return (
@@ -64,11 +74,13 @@ const Header2 = () => {
                             <NavLink to="/travel-contact" className="nav-item nav-link">Contact</NavLink>
                             <NavLink to="/about-us" className="nav-item nav-link">About</NavLink>
                         </div>
-                        <a href="" className="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
+                        <div className="btn btn-primary rounded-pill py-2 px-4 ms-lg-4" onClick={handlequoteClick}>Enquery Now</div>
                     </div>
                 </nav>
             </div>
             {/* Navbar & Hero End */}
+
+            {isFreeQuote && <FreeQuoteModal onClose={handlequoteCloseModal} />}
         </>
     );
 }

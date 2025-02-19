@@ -1,16 +1,17 @@
 .packagename {
     color: rgb(33, 33, 33);
-    font-size: 30px;
+    font-size: 25px;
     font-style: normal;
     font-weight: 500;
-    line-height: 40px;
-    margin-top: 16px;
+    line-height: 20px;
+    margin-top: 12px;
 }
+
 
 .pickupdropcontainer {
     display: inline-flex;
     flex-direction: row;
-    padding: 12px 14px;
+    padding: 0px 20px;
     -webkit-box-align: center;
     align-items: center;
     gap: 10px;
@@ -37,12 +38,13 @@
 }
 
 .container {
-    display: flex;
+    /* display: flex; */
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
-    /* Space between top content */
+    margin-top: 0px;
+    
 }
+
 
 .pickupdropicon {
     width: 30px;
@@ -89,6 +91,7 @@
 /*** itineary css in package details  ***/
 
 .itncontainer {
+    margin-top: 50px;
     display: flex;
     width: 100%;
     height: 52px;
@@ -253,7 +256,70 @@
     /* Adjust the text color if needed */
 }
 
-.preprice{
+.preprice {
     text-decoration: line-through;
     margin: 10px;
 }
+
+.packageContainer {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid;
+    padding: 2px 4px;
+    border-radius: 5px;
+    box-shadow: 0 0 17px #0a0a0a;
+}
+
+.packageText {
+    flex-grow: 1;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgb(245, 237, 237);
+    box-shadow: 0 0 17px #0a0a0a;
+}
+
+.packageHeader {
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+
+
+.packageImage {
+    width: 300px;
+    height: auto;
+    margin-right: 20px;
+    object-fit: cover;
+    display: flex;
+   
+    border-radius: 5px;
+}
+
+
+
+/* For larger images or icon size in different sections */
+.largeImage {
+    width: 300px;
+    /* You can adjust this to the size you want */
+    height: auto;
+}
+
+.shortDescription {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    /* Background color for the description box */
+    border-radius: 8px;
+    /* Rounded corners */
+    text-align: center;
+}
+
+.shortDescriptionText {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+}
+

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom'; // To capture dynamic URL parameter
+import { useParams } from 'react-router-dom'; // To capture dynamic URL parameter
 import styles from "../css/intcategorywise.module.css";  // Ensure the path is correct
 import Header1 from '../Common/Header1';
 import Header2 from '../Common/Header2';
@@ -107,13 +107,11 @@ const DomCategoryWisePackages = () => {
                     {countries.map((country) => (
                         <div key={country.name} className="col-lg-3 col-md-4 col-sm-6 mb-4">
                             <div className={styles.countryCard}>
-                                <Link to="/domestic-packages">
-                                    <img
-                                        src={country.image}
-                                        alt={`${country.name} landscape`}
-                                        className={styles.countryImage}
-                                    />
-                                </Link>
+                                <img
+                                    src={country.image}
+                                    alt={`${country.name} landscape`}
+                                    className={styles.countryImage}
+                                />
                                 {/* <h3 className={styles.countryName}>{country.name}</h3> */}
                             </div>
                         </div>

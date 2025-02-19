@@ -4,6 +4,7 @@ import Header1 from './Header1';
 import Header2 from './Header2';
 import Footer from './Footer';
 import packagesData from '../js/packagesData';
+import { Link } from 'react-router-dom';
 
 const Packages = ({ type }) => {
     // Filter packages based on type (domestic or international)
@@ -62,7 +63,7 @@ const Packages = ({ type }) => {
                                             </div>
                                             <div className="row bg-primary rounded-bottom mx-0">
                                                 <div className="col-6 text-start px-0">
-                                                    <a href="#" className="btn-hover btn text-white py-2 px-4">Details</a>
+                                                    <Link to ="/details-packages" className="btn-hover btn text-white py-2 px-4">Details</Link>
                                                 </div>
                                                 <div className="col-6 text-end px-0">
                                                     <a href="#" className="btn-hover btn text-white py-2 px-4">Book Now</a>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 import styles from "../css/detailspackages.module.css";  // Ensure the path is correct
 import Header1 from './Header1'
 import Header2 from './Header2'
@@ -7,16 +6,12 @@ import Footer from './Footer'
 import DetailsContact from './DetailsContact';
 import InternationalCountry from './InternationalCountry';
 import DownloadAndShare from './DownloadAndShare';
-
-
+import vietnamImage from '/img/packages/agra_card.webp';
 
 const DetailsPackages = (type) => {
     const [activeSection, setActiveSection] = useState("overview"); // Default to 'overview'
     const [expandedDays, setExpandedDays] = useState({}); // Store expanded days
     const [isModalOpen, setIsModalOpen] = useState(false);  // Track modal state
-
-
-
     // Function to handle section click
     const handleSectionClick = (section) => {
         setActiveSection(section);
@@ -29,7 +24,6 @@ const DetailsPackages = (type) => {
             [day]: !prevState[day]
         }));
     };
-
 
     const handleShareClick = () => {
         setIsModalOpen(true);  // Show modal on share icon click
@@ -46,15 +40,12 @@ const DetailsPackages = (type) => {
         "Day 3": "Maecenas quis magna non tortor dignissim aliquam. Phasellus eget nulla in velit viverra cursus. Donec ut felis at nulla cursus placerat a et eros. Aenean at interdum magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla consequat urna et lectus."
     };
 
-
     return (
         <>
             <Header1 />
             <Header2 />
-
             {/* Share Modal */}
             {isModalOpen && <DownloadAndShare onClose={handleCloseModal} />}
-
             {/* Header Start */}
             <div className="container-fluid bg-breadcrumb">
                 <div className="container text-center py-5" style={{ maxWidth: '900px' }}>
@@ -84,36 +75,54 @@ const DetailsPackages = (type) => {
                 </div>
             </div>
             {/* Header End */}
-
             {/* Main Content */}
             <div className="container py-5">
                 <div className="row">
-                    {/* Left Part */}       
-                    <div className="col-lg-8">   
-                        <h2 className={styles.packagename}>6 Days Malaysia Tour Package With Genting Highlands</h2>
-                        <div className="col-lg-12" style={{ textAlign: 'center' }}>
-                            
-                            <span className="text-primary product-price h3" >
-                                <i className="fas fa-rupee-sign"></i>22500
-                            </span>
-                            <span className={`${styles.preprice} h3`}>
-                                <span className="fas fa-rupee-sign"></span>23,500
-                            </span>
+                    {/* Left Part */}
+                    <div className="col-lg-9">
+                        <div className={styles.packageText}>
+                            <h2 className={styles.packagename}>6 Days Malaysia Tour Package With Genting Highlands</h2>
+                            <div className="col-lg-12" style={{ textAlign: 'center' }}>
+                                <span className="text-primary product-price h5">
+                                    <i className="fas fa-rupee-sign"></i>22500
+                                </span>
+                                <span className={`${styles.preprice} h5`}>
+                                    <span className="fas fa-rupee-sign"></span>23,500
+                                </span>
+                            </div>
                         </div>
 
-                        <div className={styles.container}>
-                            <div className={styles.pickupdropcontainer}>
-                                <img src="/img/new-location.svg" className={styles.pickupdropicon} />
-                                <div className={styles.pickupdropinfo}>
-                                    <h3 className={styles.pickupdropheading}>Pickup & Drop</h3>
-                                    <p className={styles.pickupdropdetails}>Kuala Lumpur Airport - Kuala Lumpur Airport</p>
-                                </div>
+                        <div className={styles.packageContainer}>
+                            <div className={styles.packageHeader}>
+                                {/* Image on the left */}
+                                <img
+                                    src={vietnamImage} // Replace with your image URL
+                                    alt="Package"
+                                    className={styles.packageImage}
+                                />
                             </div>
+                            <div className={styles.container}>
+                                <div className={styles.pickupdropcontainer}>
+                                    <img src="/img/new-location.svg" className={styles.pickupdropicon} />
+                                    <div className={styles.pickupdropinfo}>
+                                        <h3 className={styles.pickupdropheading}>Pickup & Drop</h3>
+                                        <p className={styles.pickupdropdetails}>Kuala Lumpur Airport - Kuala Lumpur Airport</p>
+                                    </div>
+                                </div>
 
-                            <div className={styles.pickupdropcontainer}>
-                                <img src="/img/new-clock.svg" className={styles.durationIcon} />
-                                <div className={styles.pickupdropinfo}>
-                                    <p className={styles.durationText}>Duration: 5N - 6D</p>
+                                <div className={styles.pickupdropcontainer}>
+                                    <img src="/img/new-clock.svg" className={styles.durationIcon} />
+                                    <div className={styles.pickupdropinfo}>
+                                        <p className={styles.durationText}>Duration: 5N - 6D</p>
+                                    </div>
+                                </div>
+
+                                {/* Short Description Section */}
+                                <div className={styles.pickupdropcontainer}>
+                                    <img src="/img/desc.png" className={styles.durationIcon} />
+                                    <p className={styles.shortDescriptionText}>
+                                        This tour includes an exciting journey through Malaysia, with visits to top attractions and a relaxed stay in Genting Highlands.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -152,7 +161,6 @@ const DetailsPackages = (type) => {
                                 <h3 className={styles.dthead}>Overview & Highlights</h3>
                                 <p className={styles.indvdetails}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto rerum nisi ullam asperiores vitae, repudiandae dolor doloribus a quo non maxime magni dolore minima perferendis, provident dolorem optio ipsa quae.</p>
                             </div>
-
                         )}
 
                         {activeSection === "itinerary" && (
@@ -267,17 +275,13 @@ const DetailsPackages = (type) => {
                             </div>
                         )}
                     </div>
-
                     {/* Right Part */}
                     <DetailsContact />
                 </div>
             </div>
-            {/* Main Content End */}
-
             <InternationalCountry></InternationalCountry>
             <Footer />
         </>
     );
 }
-
 export default DetailsPackages;

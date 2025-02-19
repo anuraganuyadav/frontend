@@ -13,7 +13,7 @@ const DetailsContact = () => {
 
     return (
         <>
-            <div className="col-lg-4">
+            <div className="col-lg-3">
 
                 <h3 className={styles.customised}>Customised</h3>
                 <p className={styles.custrip}>Customise your trip with us!</p>

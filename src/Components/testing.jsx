@@ -1,35 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import packagesData from '../../packagesData'; // Import the data
+import styles from "../css/intcategorywise.module.css"; // Ensure path is correct
 
-const CloseButton = ({ onClose }) => {
+const CityPackages = () => {
+    const { cityName } = useParams(); // Capture the city name from the URL
+    const [packages, setPackages] = useState([]);
+
+    useEffect(() => {
+        // Filter packagesData based on the cityName and type (domestic)
+        const filteredPackages = packagesData.filter(
+            (pkg) => pkg.type === 'domestic' && pkg.city_name.toLowerCase() === cityName.toLowerCase()
+        );
+        setPackages(filteredPackages);
+    }, [cityName]);
+
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#015F74">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5"></path>
-            <circle cx="12" cy="12" r="9" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
-                <span onClick={onClose} className="shareclosebtn">&times;</span>
-            </circle>
-        </svg>
-    );
-};
-
-export default CloseButton;
-<div class="col-lg-12">
-    <span class="text-primary product-price h3"><i class="fas fa-rupee-sign"></i>22500</span>
-    <span class="done-task pre-price h3 "><span class="fas fa-rupee-sign"></span>23,500</span>
-
-</div>
-import React from 'react';
-
-const ProductPrice = () => {
-    return (
-        <div className="col-lg-12">
-            <span className="text-primary product-price h3" style={{ textAlign: 'center' }}>
-                <i className="fas fa-rupee-sign"></i>22500
-            </span>
-            <span className="done-task pre-price h3">
-                <span className="fas fa-rupee-sign"></span>23,500
-            </span>
+        <div className="container">
+            <h2>Packages for {cityName.charAt(0).toUpperCase() + cityName.slice(1)}</h2>
+            <div className="row">
+                {packages.length > 0 ? (
+                    packages.map((pkg) => (
+                        <div key={pkg.id} className="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div className={styles.packageCard}>
+                                <img src={pkg.img} alt={pkg.city_name} className={styles.packageImage} />
+                                <h3>{pkg.title}</h3>
+                                <p>{pkg.description}</p>
+                                <p><strong>Price: {pkg.price}</strong></p>
+                            </div>
+                        </div>
+                    ))
+                ) : (
+                    <p>No packages available for this city.</p>
+                )}
+            </div>
         </div>
     );
 };
 
-export default ProductPrice;
+export default CityPackages;
