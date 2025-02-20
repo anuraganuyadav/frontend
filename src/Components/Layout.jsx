@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from "react";
 import Header1 from './Common/Header1';
 import Header2 from './Common/Header2';
 import Footer from './Common/Footer';
@@ -14,76 +14,67 @@ import SubscribeTravel from './Common/SubscribeTravel';
 import Blogs from './Common/Blogs';
 import InternationalCountry from './Common/InternationalCountry';
 
+
 const Layout = () => {
+    // Enquiry modal state
+    const [isEnqueyModalOpen, setIsEnqueryModalOpen] = useState(false);
+
+    // Open modal
+    const openEnqueryModal = () => {
+        setIsEnqueryModalOpen(true);
+    };
+
+    // Close modal
+    const closeEnqueryModal = () => {
+        setIsEnqueryModalOpen(false);
+    };
+
     return (
         <>
-            {/* Spinner start */}
-            {/* <div id="spinner" className="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-                <div className="spinner-border text-primary" style={{ width: '3rem', height: '3rem' }} role="status">
-                    <span className="sr-only">Loading...</span>
-                </div>
-            </div> */}
-            {/* Spinner End */}
-
             {/* Topbar start */}
-            <Header1></Header1>
+            <Header1 />
             {/* Topbar End */}
 
             {/* Navbar & Hero Start */}
-            <Header2></Header2>
+            <Header2 />
+            <HeroBanner />
             {/* Navbar & Hero End */}
-            <HeroBanner></HeroBanner>
+           
+            {/* Country Section */}
+            <InternationalCountry />
 
-            <InternationalCountry></InternationalCountry>
-            {/* Destination Start  */}
-            <PopularDestination></PopularDestination>
+            {/* Popular Destinations */}
+            <PopularDestination />
 
-            {/* Destination Start  */}
+            {/* Explore Tour Section */}
+            <ExploreTour />
 
+            {/* Awesome Packages */}
+            <AwesomePackage />
 
-            {/* Explore Tour Start */}
-            <ExploreTour></ExploreTour>
+            {/* Gallery Section */}
+            <Gallery />
 
-            {/* Explore Tour end */}
+            {/* Booking Online */}
+            <BookingOnline />
 
+            {/* Travel Guide */}
+            <TravelGuide />
 
-            {/*Packages Start*/}
-            <AwesomePackage></AwesomePackage>
-            {/*Packages end*/}
+            {/* Blog Section */}
+            <Blogs />
 
+            {/* Testimonial Section */}
+            <Testimonial />
 
-            {/* Gallery Start */}
-            <Gallery></Gallery>
-            {/* Gallery end */}
+            {/* Subscribe Section */}
+            <SubscribeTravel />
 
-            {/*  Tour Booking Start */}
-            <BookingOnline></BookingOnline>
-            {/*  Tour Booking end */}
+            {/* Footer Section */}
+            <Footer />
 
+            {/* Right Modal Section for Enquiry */}
 
-            {/* Travel Guide Start */}
-            <TravelGuide></TravelGuide>
-            {/* Travel Guide end */}
-
-
-            {/* Blog Start */}
-            <Blogs></Blogs>
-            {/* Blog Start */}
-
-
-            {/*  Testimonial Start*/}
-            <Testimonial></Testimonial>
-            {/*  Testimonial Start*/}
-
-
-            {/*  Subscribe Start*/}
-            <SubscribeTravel></SubscribeTravel>
-
-            {/*  Subscribe end*/}
-
-            {/* Footer Start */}
-            <Footer></Footer>
-            {/* Footer end */}
         </>
     );
 };

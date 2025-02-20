@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from "../css/packages.module.css";
 import Header1 from './Header1';
 import Header2 from './Header2';
 import Footer from './Footer';
 import packagesData from '../js/packagesData';
 import { Link } from 'react-router-dom';
+import BookNowModal from '../Modal/BookNowModal';
 
 const Packages = ({ type }) => {
     // Filter packages based on type (domestic or international)
     const filteredPackages = packagesData.filter(pkg => pkg.type === type);
+
+    const [isBookModalOpen, setBookModalOpen] = useState(false); // Track modal state
+
+    // Handle Enquiry button click
+    const handleBookClick = () => {
+        setBookModalOpen(true); // Open modal on Enquiry button click
+    };
+
+    // Handle Enquiry modal close
+    const handleBookCloseModal = () => {
+        setBookModalOpen(false); // Close modal
+    };
+
 
     return (
         <>
@@ -63,10 +77,10 @@ const Packages = ({ type }) => {
                                             </div>
                                             <div className="row bg-primary rounded-bottom mx-0">
                                                 <div className="col-6 text-start px-0">
-                                                    <Link to ="/details-packages" className="btn-hover btn text-white py-2 px-4">Details</Link>
+                                                    <Link to="/details-packages" className="btn-hover btn text-white py-2 px-4">Details</Link>
                                                 </div>
                                                 <div className="col-6 text-end px-0">
-                                                    <a href="#" className="btn-hover btn text-white py-2 px-4">Book Now</a>
+                                                    <a href="#" className="btn-hover btn text-white py-2 px-4" onClick={handleBookClick}>Book Now</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -81,6 +95,7 @@ const Packages = ({ type }) => {
                 </div>
             </div>
             <Footer />
+            {isBookModalOpen && <BookNowModal onClose={handleBookCloseModal} />}
         </>
     );
 };

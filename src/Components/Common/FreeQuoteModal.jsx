@@ -91,7 +91,7 @@ const FreeQuoteModal = ({ onClose }) => {
 
 
 
-                    <svg xmlns="http://www.w3.org/2000/svg" className={styles.quoteclosebtn} onClick={onClose}  fill="none" viewBox="0 0 24 24" stroke="#015F74"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5"></path><circle cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" className={styles.quoteclosebtn} onClick={onClose} fill="none" viewBox="0 0 24 24" stroke="#015F74"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5"></path><circle cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle></svg>
 
                 </div>
                 {/* <span onClick={onClose} className={styles.quoteclosebtn}>&times;</span> */}

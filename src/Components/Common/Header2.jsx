@@ -1,23 +1,20 @@
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import FreeQuoteModal from './FreeQuoteModal';
+import HeaderEnquery from '../Modal/HeaderEnquery';
+import CommonEnquery from './CommonEnquery';
+
 
 const Header2 = () => {
+    const [isEnqueryModalOpen, setEnqueryModalOpen] = useState(false); // Track modal state
 
-    const [isOpen, setIsOpen] = useState(false);
-
-    // Toggle dropdown visibility
-    const toggleDropdown = () => {
-        setIsOpen(!isOpen);
+    // Handle Enquiry button click
+    const handleEnqueryClick = () => {
+        setEnqueryModalOpen(true); // Open modal on Enquiry button click
     };
 
-    const [isFreeQuote, setFreeQuoteIsModalOpen] = useState(false);  // Track modal state
-    const handlequoteClick = () => {
-        setFreeQuoteIsModalOpen(true);  // Show modal on share icon click
-    };
-
-    const handlequoteCloseModal = () => {
-        setFreeQuoteIsModalOpen(false); // Close modal
+    // Handle Enquiry modal close
+    const handleEnqueryCloseModal = () => {
+        setEnqueryModalOpen(false); // Close modal
     };
 
     return (
@@ -39,17 +36,16 @@ const Header2 = () => {
                                 <Link
                                     to="/domestic-packages"
                                     className="nav-link"
-                                    onClick={toggleDropdown}  // Handle click to toggle dropdown visibility
                                 >
                                     Domestic Packages
                                 </Link>
 
                                 <div className="dropdown-menu m-0">
-                                    <NavLink to="/domestic/category/honeymoon-packages" className="dropdown-item" key="honeymoon-domestic">Honeymoon Packages</NavLink>
-                                    <NavLink to="/domestic/category/family-packages" className="dropdown-item" key="family-domestic">Family Packages</NavLink>
-                                    <NavLink to="/domestic/category/group-packages" className="dropdown-item" key="group-domestic">Group Packages</NavLink>
-                                    <NavLink to="/domestic/category/weekend-packages" className="dropdown-item" key="weekend-domestic">Weekend Packages</NavLink>
-                                    <NavLink to="/domestic/category/solo-packages" className="dropdown-item" key="solo-domestic">Solo Packages</NavLink>
+                                    <NavLink to="/domestic/category/honeymoon-packages" className="dropdown-item">Honeymoon Packages</NavLink>
+                                    <NavLink to="/domestic/category/family-packages" className="dropdown-item">Family Packages</NavLink>
+                                    <NavLink to="/domestic/category/group-packages" className="dropdown-item">Group Packages</NavLink>
+                                    <NavLink to="/domestic/category/weekend-packages" className="dropdown-item">Weekend Packages</NavLink>
+                                    <NavLink to="/domestic/category/solo-packages" className="dropdown-item">Solo Packages</NavLink>
                                 </div>
                             </div>
 
@@ -57,32 +53,44 @@ const Header2 = () => {
                                 <Link
                                     to="/international-packages"
                                     className="nav-link"
-                                    onClick={toggleDropdown}  // Handle click to toggle dropdown visibility
                                 >
                                     International Packages
                                 </Link>
 
-                                <div className={`dropdown-menu m-0 ${isOpen ? 'show' : ''}`}>
-                                    <NavLink to="/international/category/honeymoon-packages" className="dropdown-item" key="honeymoon-international">Honeymoon Packages</NavLink>
-                                    <NavLink to="/international/category/family-packages" className="dropdown-item" key="family-international">Family Packages</NavLink>
-                                    <NavLink to="/international/category/group-packages" className="dropdown-item" key="group-international">Group Packages</NavLink>
-                                    <NavLink to="/international/category/weekend-packages" className="dropdown-item" key="weekend-international">Weekend Packages</NavLink>
-                                    <NavLink to="/international/category/solo-packages" className="dropdown-item" key="solo-international">Solo Packages</NavLink>
+                                <div className="dropdown-menu m-0">
+                                    <NavLink to="/international/category/honeymoon-packages" className="dropdown-item">Honeymoon Packages</NavLink>
+                                    <NavLink to="/international/category/family-packages" className="dropdown-item">Family Packages</NavLink>
+                                    <NavLink to="/international/category/group-packages" className="dropdown-item">Group Packages</NavLink>
+                                    <NavLink to="/international/category/weekend-packages" className="dropdown-item">Weekend Packages</NavLink>
+                                    <NavLink to="/international/category/solo-packages" className="dropdown-item">Solo Packages</NavLink>
                                 </div>
                             </div>
 
                             <NavLink to="/travel-contact" className="nav-item nav-link">Contact</NavLink>
                             <NavLink to="/about-us" className="nav-item nav-link">About</NavLink>
                         </div>
-                        <div className="btn btn-primary rounded-pill py-2 px-4 ms-lg-4" onClick={handlequoteClick}>Enquery Now</div>
+                        <div className="btn btn-primary rounded-pill py-2 px-4 ms-lg-4" onClick={handleEnqueryClick}>
+                            Enquiry Now
+                        </div>
                     </div>
                 </nav>
             </div>
             {/* Navbar & Hero End */}
+            <div>
+                <div className="vertical-whatsapp-container">
+                    <a
+                        href="https://api.whatsapp.com/send?text=https://international.in/trip/malaysia-tour-package-with-genting-highlands"
+                        target="_blank" rel="noopener noreferrer">
+                        <img alt="WhatsApp" src="/img/whatsapp.webp" className='vertical-whatsapp-btn' />
+                    </a>
+                </div>
+            </div>
 
-            {isFreeQuote && <FreeQuoteModal onClose={handlequoteCloseModal} />}
+            {/* Show the enquiry modal when the state is true */}
+            {isEnqueryModalOpen && <HeaderEnquery onClose={handleEnqueryCloseModal} />}
+            <CommonEnquery></CommonEnquery>
         </>
     );
-}
+};
 
 export default Header2;
