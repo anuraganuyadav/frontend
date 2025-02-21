@@ -3,8 +3,9 @@
 const packagesData = [
   {
     id: 1,
+    popular_packages: "Active",
     type: "domestic", // Added the type field
-    subcategory_name: "Weekend Packages",
+    subcategory_name: "Solo Packages",
     city_name: "Agra",
     img: "/img/packages/agra_card.webp",
     title: "Agra - Uttar Pradesh",
@@ -18,6 +19,7 @@ const packagesData = [
   {
     id: 2,
     type: "domestic", // Added the type field
+    popular_packages: "Active",
     subcategory_name: "Weekend Packages",
     city_name: "Himachal",
     img: "/img/packages/himachal_card.webp",
@@ -33,6 +35,7 @@ const packagesData = [
   {
     id: 3,
     type: "domestic", // Added the type field
+    popular_packages: "Deactive",
     subcategory_name: "Weekend Packages",
     city_name: "Uttarakhand",
     img: "/img/packages/uttarakhand_card.webp",
@@ -48,7 +51,8 @@ const packagesData = [
   {
     id: 4,
     type: "domestic", // Added the type field
-    subcategory_name: "Weekend Packages",
+    subcategory_name: "Weekend-Packages",
+    popular_packages: "Deactive",
     city_name: "Goa",
     img: "/img/packages/goa_card.png",
     title: "Goa - India",
@@ -64,7 +68,8 @@ const packagesData = [
     id: 5,
     type: "international", // Added the type field
     subcategory_name: "Honeymoon Packages",
-    counntry_name: "Dubai",
+    popular_packages: "Deactive",
+    city_name: "Dubai",
     img: "/img/packages/dubai-card.webp",
     title: "Dubai desert blooms with luxury",
     price: "$449.00",
@@ -78,11 +83,12 @@ const packagesData = [
     id: 6,
     type: "international", // Added the type field
     subcategory_name: "Group Packages",
-    counntry_name: "Mauritius",
-    img: "/img/packages/mauritiu_card.webp",
+    popular_packages: "Deactive",
+    city_name: "Bali",
+    img: "/img/packages/bali_card.webp",
     title: "Grand Baie",
     price: "$549.00",
-    location: "Mauritius",
+    location: "Bali",
     duration: "7 days",
     persons: "2 Person",
     description:
@@ -92,7 +98,8 @@ const packagesData = [
     id: 7,
     type: "international", // Added the type field
     subcategory_name: "Weekend Packages",
-    counntry_name: "Thailand",
+    popular_packages: "Deactive",
+    city_name: "Thailand",
     img: "/img/packages/thailand-card.webp",
     title: "Fantastic 10 Days Thailand Tour Package",
     price: "$549.00",
@@ -107,7 +114,8 @@ const packagesData = [
     id: 8,
     type: "international", // Added the type field
     subcategory_name: "Solo Packages",
-    counntry_name: "Maldivies",
+    popular_packages: "Active",
+    city_name: "Maldives",
     img: "/img/packages/maldives_card.webp",
     title: "TCocu Bodu Hithi Resort",
     price: "$449.00",
@@ -122,11 +130,12 @@ const packagesData = [
     id: 9,
     type: "international", // Added the type field
     subcategory_name: "Family Packages",
-    counntry_name: "Dubai",
-    img: "/img/packages/maldives_card.webp",
+    popular_packages: "Deactive",
+    city_name: "Singapore",
+    img: "/img/packages/singapore_card.webp",
     title: "TCocu Bodu Hithi Resort",
     price: "$449.00",
-    location: "Maldives",
+    location: "Singapore",
     duration: "5 days",
     persons: "2 Person",
     description:

@@ -34,7 +34,7 @@ const Header2 = () => {
 
                             <div className="nav-item dropdown">
                                 <Link
-                                    to="/domestic-packages"
+                                    to="/packages/domestic"
                                     className="nav-link"
                                 >
                                     Domestic Packages
@@ -51,7 +51,7 @@ const Header2 = () => {
 
                             <div className="nav-item dropdown">
                                 <Link
-                                    to="/international-packages"
+                                    to="/packages/international"
                                     className="nav-link"
                                 >
                                     International Packages

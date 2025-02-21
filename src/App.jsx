@@ -21,14 +21,21 @@ function App() {
         <Route path="/service-us" element={<Services />} />
         <Route path="/travel-blog" element={<TravelBlogs />} />
         <Route path="/travel-contact" element={<ContactUs />} />
-        <Route path="/domestic-packages" element={<Packages type="domestic" />} />
-        <Route path="/international-packages" element={<Packages type="international" />} />
+        {/* <Route path="/domestic-packages" element={<Packages type="domestic" />} />
+        <Route path="/international-packages" element={<Packages type="international" />} /> */}
         <Route path="/international/category/:category" element={<IntCategoryWisePackages />} />
         <Route path="/domestic/category/:category" element={<DomCategoryWisePackages />} />
+        {/* <Route path="/domestic/category/:type/:city" element={<DomCategoryWisePackages />} /> */}
+
+        <Route path="/packages/:type/:city" element={<Packages />} />
+        <Route path="/packages/:type" element={<Packages />} />
+        <Route path="/packages" element={<Packages />} />
+        <Route path="/packages/:type/:subcategory_name" element={<Packages />} />
         <Route path="/details-packages" element={<DetailsPackages />} />
         <Route path="/travel-blogs" element={<TravelBlogs />} />
         <Route path="/travel-gallery" element={<TravelGallery />} />
         <Route path="/error-404" element={< Error404 />} />
+
       </Routes>
     </BrowserRouter>
   );
